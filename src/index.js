@@ -2,7 +2,7 @@ import Provider, {Store as storeContext} from './StoreProvider';
 import bindComponent from './connect';
 import {combineAllReducers} from './combineReducers';
 
-export const createStore = (reducers, initialState) => ({reducers, initialState});
+// export const createStore = (reducers, initialState) => ({reducers, initialState});
 // export const compose = (...funcs) => (...args) => funcs.forEach(f => f(...args));
 
 // export const applyMiddleware = compose;
