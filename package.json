@@ -1,0 +1,51 @@
+{
+  "name": "redux2hooks",
+  "version": "0.0.1",
+  "description": "Small library to replace Redux with hooks",
+  "main": "src/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --mode development --config webpack.dev.js",
+    "build": "set NODE_ENV=production&&webpack --mode production --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekokotov/redux2hooks.git"
+  },
+  "keywords": [
+    "redux",
+    "hooks",
+    "thunk",
+    "replacement",
+    "connect"
+  ],
+  "author": "Evgeny Kokatau",
+  "license": "BSD 2-Clause License",
+  "bugs": {
+    "url": "https://github.com/ekokotov/redux2hooks/issues"
+  },
+  "homepage": "https://github.com/ekokotov/redux2hooks#readme",
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-1": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.7.2",
+    "webpack": "^4.32.1",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1",
+    "webpack-merge": "^4.2.1",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "reselect": "^4.0.0",
+    "@githubprimer/octicons-react": "^8.5.0",
+    "@octokit/rest": "^16.26.0"
+  }
+}
