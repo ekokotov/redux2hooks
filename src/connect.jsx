@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Store} from "./StoreProvider";
+import {Store} from "./StoreProvider.jsx";
 
 export default function connect(mapStateToProps, mapActions) {
   return Component => () => {

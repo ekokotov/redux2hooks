@@ -1,4 +1,4 @@
-import Provider, {Store as storeContext} from './StoreProvider';
+import Provider, {Store as storeContext} from './StoreProvider.jsx';
 import bindComponent from './connect';
 import {combineAllReducers} from './combineReducers';
 
