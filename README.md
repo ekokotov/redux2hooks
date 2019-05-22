@@ -1,5 +1,6 @@
 # redux2hooks
-Small library for a smooth replacement of Redux/Thunk for React 16 hooks using Redux-like syntax.
+> Small library for a smooth replacement of Redux/Thunk for React 16 hooks using Redux-like syntax.
+
 [![Build Status](https://img.shields.io/travis/ekokotov/redux2hooks.svg?style=flat-square)](https://travis-ci.com/ekokotov/redux2hooks)
 
 ## Introduction
