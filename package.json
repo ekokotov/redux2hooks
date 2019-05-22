@@ -30,7 +30,8 @@
   },
   "homepage": "https://github.com/ekokotov/redux2hooks#readme",
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=16.8.0",
+    "prop-types": ">=15.0.0"
   },
   "dependencies": {
     "react": "^16.8.6"
