@@ -6,7 +6,7 @@ exports.default = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: './[name].bundle.js'
+    filename: './index.js'
   },
   module: {
     rules: [{
@@ -16,7 +16,11 @@ exports.default = {
         options: {
           plugins: ['@babel/plugin-proposal-export-default-from'],
           presets: [
-            '@babel/preset-env',
+            ["@babel/preset-env", {
+              "targets": {"browsers": ["last 2 chrome versions"]},
+              "corejs": "2", // <---
+              "useBuiltIns": "entry"
+            }],
             '@babel/preset-react',
           ],
         },

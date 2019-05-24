@@ -59,11 +59,7 @@ exports.default = {
             options: {
               cacheDirectory: PATH.BABEL_CACHE,
               presets: [
-                '@babel/preset-react',
-                ["@babel/preset-env", {
-                  "targets": {"browsers": ["last 2 chrome versions"]},
-                  "useBuiltIns": "usage"
-                }],
+                '@babel/preset-react'
               ],
               plugins: [
                 ["@babel/plugin-proposal-class-properties", {"loose": true}],

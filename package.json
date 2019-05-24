@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "module": "src/index.js",
-  "main": "dist/redux2hooks.bundle.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --config webpack.dev.js",
@@ -34,6 +34,7 @@
     "prop-types": ">=15.0.0"
   },
   "dependencies": {
+    "core-js": "^2.6.8",
     "react": "^16.8.6"
   },
   "devDependencies": {

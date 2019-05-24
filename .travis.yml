@@ -7,3 +7,6 @@ cache:
 script:
   - npm i
   - npm run build
+tags: false
+ on:
+    tags: false

@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {createContext, useReducer} from 'react';
 import PropTypes from 'prop-types';
 
-export const Store = React.createContext();
+export const Store = createContext();
 
 // const devTools = devToolsEnhancer;
 // let _redux;
 // import {devToolsEnhancer} from 'redux-devtools-extension';
 
 export function StoreProvider(props) {
-  let [state, setState] = React.useReducer(props.reducers, props.initialState || props.reducers());
+  let [state, setState] = useReducer(props.reducers, props.initialState || props.reducers());
   // _redux = devTools.connect();
   // _redux.init(state);
   //
