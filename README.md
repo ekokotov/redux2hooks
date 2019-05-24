@@ -38,7 +38,7 @@ npm run dev
 - [useActions(object?)](#useActions) - hook to map your actions to store dispatch function.
 - [useContext(Store)](#store) - hook to inject new Store.
 
-##How to init store
+## How to init store
 1. Combine your Reducers using `combineReducers`
 2. Wrap your app into StoreProvider and pass reducers as a prop
 3. Connect your component to store using `connect` or use `React.useContext`
