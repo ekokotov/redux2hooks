@@ -1,10 +1,9 @@
-import React, {useEffect, Fragment,useContext} from 'react';
+import React, {useEffect, Fragment} from 'react';
 import {loadFeed, loadNextPage} from "../../store/feed/actions";
 import Event from "./event";
-import {useStore, useActions, Store} from "../../../src";
+import {useStore, useActions} from "../../../src";
 
 function Feed() {
-  const {dispatch} = useContext(Store);
   const {events, inProgress, page} = useStore(store => ({
     events: store.feeds.events,
     inProgress: store.feeds.inProgress,
@@ -17,7 +16,7 @@ function Feed() {
   });
 
   useEffect(() => {
-    dispatch(loadFeed())
+    actions.loadFeed()
   }, [page]);
 
   return (
@@ -35,7 +34,7 @@ function Feed() {
       </ul>
       <div className="d-flex justify-content-center">
         {events.length ?
-          <button className="btn btn-outline-success btn-sm m-3" onClick={actions.loadNextPage}>
+          <button className="btn btn-outline-success btn-sm m-3" onClick={() => actions.loadNextPage()}>
             {inProgress ?
               <Fragment>
                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"/>
