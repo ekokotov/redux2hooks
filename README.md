@@ -192,7 +192,7 @@ function Feed() {
   return (
     <Fragment>
      ....
-     <button onClick={actions.loadNextPage}>
+     <button onClick={() => actions.loadNextPage}>
     </Fragment>
   );
 }

@@ -10,6 +10,7 @@ export const loadFeed = () => async (dispatch, getState) => {
 
     dispatch({type: LOADING_SUCCESS, payload: {events}});
   } catch (e) {
+    console.warn(e);
     dispatch({type: LOADING_FAILED});
   } finally {
     dispatch({type: LOADING_END});

@@ -8,13 +8,13 @@ exports.default = {
     path: __dirname + '/dist',
     filename: './[name].bundle.js'
   },
-  plugins: [],
   module: {
     rules: [{
       test: /\.js|jsx$/,
       use: [{
         loader: 'babel-loader',
         options: {
+          plugins: ['@babel/plugin-proposal-export-default-from'],
           presets: [
             '@babel/preset-env',
             '@babel/preset-react',

@@ -34,7 +34,7 @@ function Feed() {
       </ul>
       <div className="d-flex justify-content-center">
         {events.length ?
-          <button className="btn btn-outline-success btn-sm m-3" onClick={actions.loadNextPage}>
+          <button className="btn btn-outline-success btn-sm m-3" onClick={() => actions.loadNextPage}>
             {inProgress ?
               <Fragment>
                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"/>
