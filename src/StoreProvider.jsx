@@ -11,11 +11,6 @@ export function StoreProvider(props) {
   let [state, setState] = useReducer(props.reducers, props.initialState || props.reducers());
   // _redux = devTools.connect();
   // _redux.init(state);
-  //
-  // _redux.subscribe((message) => {
-  //   if (message.type === 'DISPATCH' && message.state) {
-  //     console.log('DevTools requested to change the state to', message);
-  //   }
   // });
   function getState() {
     return state;
@@ -26,11 +21,6 @@ export function StoreProvider(props) {
       return action(dispatch, getState);
     } else if (typeof action === 'object') {
       // devTools.send(action, reducers(state, action));
-      // if (props.middleware && props.middleware.length) {
-      //   return props.middleware(state, setState, action);
-      // } else {
-      //   return setState(action);
-      // }
       return setState(action);
     }
   }

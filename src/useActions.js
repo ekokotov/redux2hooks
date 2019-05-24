@@ -1,7 +1,7 @@
 import {useContext, useMemo} from 'react';
 import {Store} from "./index";
 
-export function useActions(mapAction = {}) {
+export default function useActions(mapAction = {}) {
   const {dispatch} = useContext(Store);
 
   return useMemo(() =>

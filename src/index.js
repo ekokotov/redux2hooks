@@ -1,5 +1,6 @@
-export StoreProvider, {Store} from './StoreProvider.jsx';
-export connect from './connect.jsx';
-export {combineReducers} from './combineReducers';
-export {useStore} from "./useStore";
-export {useActions} from "./useActions";
+export { default as StoreProvider } from './StoreProvider.jsx'
+export { Store } from './StoreProvider.jsx'
+export { default as connect } from './connect.jsx'
+export { default as combineReducers } from './combineReducers'
+export { default as useStore } from './useStore'
+export { default as useActions } from './useActions'

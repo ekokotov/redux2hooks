@@ -1,14 +1,15 @@
 {
   "name": "redux2hooks",
-  "version": "0.0.10",
+  "version": "0.0.11",
+  "public": true,
   "description": "Small library to replace Redux with hooks",
   "author": {
     "name": "Evgeny Kokatau",
     "email": "ekokotov@gmail.com"
   },
   "license": "MIT",
-  "module": "src/index.js",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --config webpack.dev.js",
@@ -40,7 +41,6 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-1": "^7.0.0",

@@ -14,7 +14,7 @@ exports.default = {
       use: [{
         loader: 'babel-loader',
         options: {
-          plugins: ['@babel/plugin-proposal-export-default-from'],
+          plugins: [],
           presets: [
             ["@babel/preset-env", {
               "targets": {"browsers": ["last 2 chrome versions"]},
