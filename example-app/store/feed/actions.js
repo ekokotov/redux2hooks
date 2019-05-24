@@ -1,4 +1,4 @@
-import {LOADING_END, LOADING_FAILED, LOADING_START, LOADING_SUCCESS, SET_PAGE} from "../feed/action-types";
+import {LOADING_END, LOADING_FAILED, LOADING_START, LOADING_SUCCESS, NEXT_PAGE} from "../feed/action-types";
 import API from "../../api";
 
 export const loadFeed = () => async (dispatch, getState) => {
@@ -16,9 +16,4 @@ export const loadFeed = () => async (dispatch, getState) => {
   }
 };
 
-export const loadNextPage = () => (dispatch, getState) => {
-  const store = getState();
-  const page = store.feeds.page + 1;
-
-  dispatch({type: SET_PAGE, payload: {page}})
-};
+export const loadNextPage = () => ({type: NEXT_PAGE});

@@ -23,17 +23,17 @@ function Event(props) {
             </div>
             {payload.description && <p className="mb-1 text-secondary">{payload.description}</p>}
             {payload.issue && <div>
-              {payload.comment ? <p className="text-secondary bg-light p-1 m-0 rounded">
+              {payload.comment ? <div className="text-secondary bg-light p-1 m-0 rounded">
                 <pre>
                   <code>
                     {payload.comment.body}
                   </code>
                 </pre>
-                </p> :
-                <p className="mb-1 text-secondary">
+                </div> :
+                <div className="mb-1 text-secondary">
                   <b><a href={payload.issue.url} target="_blank">{payload.issue.title}</a></b>
                   <p className="text-secondary bg-light p-1 rounded m-0 ">{payload.issue.body}</p>
-                </p>}
+                </div>}
               <small>
                 <Octicon icon={Link} size='small' className="mr-1"/>
                 <a href={payload.issue.html_url} target="_blank">Issue</a>
@@ -50,4 +50,4 @@ Event.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default Event;
+export default React.memo(Event);

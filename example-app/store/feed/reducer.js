@@ -1,10 +1,10 @@
-import {LOADING_START, LOADING_END, LOADING_SUCCESS, LOADING_FAILED, SET_PAGE} from './action-types';
+import {LOADING_START, LOADING_END, LOADING_SUCCESS, LOADING_FAILED,  NEXT_PAGE} from './action-types';
 import {LOGOUT} from "../auth/action-types";
 
 const initialState = {
   events: [],
   inProgress: false,
-  page: 0
+  page: 1
 };
 
 function reduce(state = initialState, action = {}) {
@@ -33,7 +33,7 @@ function reduce(state = initialState, action = {}) {
         inProgress: false,
       };
 
-    case SET_PAGE:
+    case NEXT_PAGE:
       return {
         ...state,
         page: state.page + 1

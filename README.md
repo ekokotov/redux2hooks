@@ -34,6 +34,8 @@ npm run dev
 - [connect](#connect) - `react-redux`-like HOC to connect your component to store
 - [StoreProvider](#storeprovider) - application wrapper based on Context APi
 - [combineReducers](#combineReducers) - to merge your store reducers into single one.
+- [useStore(func?)](#useStore) - hook to inject store and get any store value by selector.
+- [useActions(object?)](#useActions) - hook to map your actions to store dispatch function.
 - [useContext(Store)](#store) - hook to inject new Store.
 
 ##How to init store
@@ -62,7 +64,7 @@ const login = userData => async dispatch => {
 ```
 ## Connect
 ```tsx
-function connect(mapStateToProps?, mapDispatchToProps?);
+function connect(mapStateToProps?:function, mapDispatchToProps?:object);
 ```
 ### Usage in functional style:
 ```tsx
@@ -141,9 +143,63 @@ export default combineReducers({
   ...
 });
 ```
-## Store
-BTW it's easy start to write your components in new fancy way:
 
+## useStore
+It's easy start to write your components in new fancy way:
+```tsx
+...
+import {Route, Redirect} from 'react-router-dom';
+import {useStore} from "redux2hooks";
+
+function PrivateRoute({component: Component, ...rest}) {
+  const {initialized, me} = useStore(store => ({
+    initialized: store.auth.initialized,
+    me: store.auth.me
+  }));
+
+  if (!initialized) {
+    return <Loading/>;
+  }
+
+  return <Route {...rest} render={
+    props => me ? <Component {...props} /> : <Redirect to={'/login'}/>
+  }/>;
+}
+```
+## useActions
+It's just helper hook to wrap your sync/async actions into store dispatch in simple way.
+```tsx
+...
+import {loadFeed, loadNextPage} from "../../store/feed/actions";
+import {useStore, useActions} from "redux2hooks";
+
+function Feed() {
+  const {events, inProgress, page} = useStore(store => ({
+    events: store.feeds.events,
+    inProgress: store.feeds.inProgress,
+    page: store.feeds.page
+  }));
+
+  const actions = useActions({
+    loadFeed,
+    loadNextPage
+  });
+
+  useEffect(() => {
+    actions.loadFeed()
+  }, [page]);
+
+  return (
+    <Fragment>
+     ....
+     <button onClick={actions.loadNextPage}>
+    </Fragment>
+  );
+}
+```
+
+## Store
+BTW you can use raw dispatch to trigger any action:
 ```tsx
 ...
 import {Store} from "redux2hooks";
@@ -161,3 +217,6 @@ function Feed() {
   );
 }
 ```
+
+### Performance
+NOTE: Check [this comment of Mr. Dan Abramov](https://github.com/facebook/react/issues/15156#issuecomment-474590693) to understand how/why you should split contexts components (aka containers) and expensive dumb components.

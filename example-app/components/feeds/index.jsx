@@ -1,32 +1,41 @@
-import React, {useEffect, useContext, Fragment} from 'react';
-import {Store} from "../../../src";
+import React, {useEffect, Fragment} from 'react';
 import {loadFeed, loadNextPage} from "../../store/feed/actions";
 import Event from "./event";
+import {useStore, useActions} from "../../../src";
 
 function Feed() {
-  const {state, dispatch} = useContext(Store);
+  const {events, inProgress, page} = useStore(store => ({
+    events: store.feeds.events,
+    inProgress: store.feeds.inProgress,
+    page: store.feeds.page
+  }));
+
+  const actions = useActions({
+    loadFeed,
+    loadNextPage
+  });
 
   useEffect(() => {
-    dispatch(loadFeed());
-  }, [state.feeds.page]);
+    actions.loadFeed()
+  }, [page]);
 
   return (
     <Fragment>
       <h3>Feed
-        {!state.feeds.inProgress && <span className="badge badge-info mr-1 ml-1">{state.feeds.events.length}</span>}
+        {!inProgress && <span className="badge badge-info mr-1 ml-1">{events.length}</span>}
         :</h3>
-      {state.feeds.inProgress && <div className="d-flex justify-content-center mt-5">
+      {inProgress && <div className="d-flex justify-content-center mt-5">
         <span className="spinner-border spinner-border-md text-info" role="status">
             <span className="sr-only">in Progress...</span>
           </span>
       </div>}
       <ul className="list-group">
-        {state.feeds.events.map(event => <Event key={event.id} data={event}/>)}
+        {events.map(event => <Event key={event.id} data={event}/>)}
       </ul>
       <div className="d-flex justify-content-center">
-        {state.feeds.events.length ?
-          <button className="btn btn-outline-success btn-sm m-3" onClick={() => dispatch(loadNextPage())}>
-            {state.feeds.inProgress ?
+        {events.length ?
+          <button className="btn btn-outline-success btn-sm m-3" onClick={actions.loadNextPage}>
+            {inProgress ?
               <Fragment>
                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"/>
                 <span className="sr-only">Loading...</span> Loading...

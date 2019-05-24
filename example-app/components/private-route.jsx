@@ -1,17 +1,20 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {Route, Redirect} from 'react-router-dom';
-import {Store} from "../../src";
+import {useStore} from "../../src";
 
 function PrivateRoute({component: Component, ...rest}) {
-  const {state} = React.useContext(Store);
+  const {initialized, me} = useStore(store => ({
+    initialized: store.auth.initialized,
+    me: store.auth.me
+  }));
 
-  if (!state.auth.initialized) {
-    return <Fragment/>;
+  if (!initialized) {
+    return <Fragment/>; // loading?
   }
 
   return <Route {...rest} render={
-    props => state.auth.me ? <Component {...props} /> : <Redirect to={'/login'}/>
+    props => me ? <Component {...props} /> : <Redirect to={'/login'}/>
   }/>;
 }
 
