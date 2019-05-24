@@ -7,6 +7,8 @@ cache:
 script:
   - npm i
   - npm run build
+branches:
+only:
+- master
 tags: false
- on:
-    tags: false
+
