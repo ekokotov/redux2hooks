@@ -1,5 +1,4 @@
-export { default as StoreProvider } from './StoreProvider.jsx'
-export { Store } from './StoreProvider.jsx'
+export { default as StoreProvider, Store } from './StoreProvider.jsx'
 export { default as connect } from './connect.jsx'
 export { default as combineReducers } from './combineReducers'
 export { default as useStore } from './useStore'

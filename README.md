@@ -34,8 +34,8 @@ npm run dev
 - [connect](#connect) - `react-redux`-like HOC to connect your component to store
 - [StoreProvider](#storeprovider) - application wrapper based on Context APi
 - [combineReducers](#combineReducers) - to merge your store reducers into single one.
-- [useStore(func?)](#useStore) - hook to inject store and get any store value by selector.
-- [useActions(object?)](#useActions) - hook to map your actions to store dispatch function.
+- [useStore(func?)](#useStore) - hook to inject store and get any store value by selector.  `in progress!`
+- [useActions(object?)](#useActions) - hook to map your actions to store dispatch function. `in progress!`
 - [useContext(Store)](#store) - hook to inject new Store.
 
 ## How to init store
@@ -192,7 +192,7 @@ function Feed() {
   return (
     <Fragment>
      ....
-     <button onClick={() => actions.loadNextPage}>
+     <button onClick={() => actions.loadNextPage()}>
     </Fragment>
   );
 }

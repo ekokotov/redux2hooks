@@ -9,11 +9,10 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --config webpack.dev.js",
-    "build": "set NODE_ENV=production&&webpack --mode production --config webpack.prod.js"
+    "build": "set NODE_ENV='production'&&babel -s -d ./dist/ ./src"
   },
   "repository": {
     "type": "git",
@@ -26,6 +25,12 @@
     "replacement",
     "connect"
   ],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "bugs": {
     "url": "https://github.com/ekokotov/redux2hooks/issues"
   },
@@ -35,12 +40,14 @@
     "prop-types": ">=15.0.0"
   },
   "dependencies": {
+    "@babel/cli": "^7.4.4",
     "core-js": "^2.6.8",
     "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-1": "^7.0.0",

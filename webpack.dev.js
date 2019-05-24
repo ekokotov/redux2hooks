@@ -27,25 +27,10 @@ exports.default = {
     historyApiFallback: true,
     disableHostCheck: true,
   },
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          enforce: true,
-          chunks: 'all',
-          reuseExistingChunk: true
-        }
-      }
-    }
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(PATH.HOOKS, 'index.html'),
-      // chunks: ['hooks', 'vendors', 'runtime']
+      template: path.resolve(PATH.HOOKS, 'index.html')
     }),
   ],
   module: {
@@ -53,20 +38,7 @@ exports.default = {
       {
         test: /\.js|jsx$/,
         exclude: /(node_modules|bower_components)/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: PATH.BABEL_CACHE,
-              presets: [
-                '@babel/preset-react'
-              ],
-              plugins: [
-                ["@babel/plugin-proposal-class-properties", {"loose": true}]
-              ]
-            }
-          }
-        ]
+        use: 'babel-loader'
       }
     ]
   },
