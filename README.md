@@ -34,8 +34,8 @@ npm run dev
 - [connect](#connect) - `react-redux`-like HOC to connect your component to store
 - [StoreProvider](#storeprovider) - application wrapper based on Context APi
 - [combineReducers](#combineReducers) - to merge your store reducers into single one.
-- [useStore(func?)](#useStore) - hook to inject store and get any store value by selector.  `in progress!`
-- [useActions(object?)](#useActions) - hook to map your actions to store dispatch function. `in progress!`
+- [useStore(func?)](#useStore) - hook to inject store and get any store value by selector.
+- [useActions(object?)](#useActions) - hook to map your actions to store dispatch function.
 - [useContext(Store)](#store) - hook to inject new Store.
 
 ## How to init store
