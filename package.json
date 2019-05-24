@@ -1,6 +1,6 @@
 {
   "name": "redux2hooks",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Small library to replace Redux with hooks",
   "author": {
     "name": "Evgeny Kokatau",
