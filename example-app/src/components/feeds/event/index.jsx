@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Octicon, {Repo, Link} from "@githubprimer/octicons-react";
+import Octicon, {Repo, Link} from "@githubprimer/octicons-react/";
 import {getEventTextByType} from "./helper";
 
 function Event(props) {

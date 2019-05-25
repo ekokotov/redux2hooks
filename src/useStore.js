@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {Store} from "./index";
+import {Store} from "./StoreProvider.jsx";
 
 export default function useStore(mapFunction) {
   const {state} = useContext(Store);

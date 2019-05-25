@@ -1,5 +1,5 @@
-import {useContext, useCallback} from 'react';
-import {Store} from "./index";
+import {useContext} from 'react';
+import {Store} from "./StoreProvider.jsx";
 
 function useActions(mapAction = {}) {
   const {dispatch} = useContext(Store);

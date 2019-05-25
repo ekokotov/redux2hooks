@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {Route, Redirect} from 'react-router-dom';
-import {useStore} from "../../src";
+import {useStore} from "../../../src";
 
 function PrivateRoute({component: Component, ...rest}) {
   const {initialized, me} = useStore(store => ({

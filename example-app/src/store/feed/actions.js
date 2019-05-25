@@ -1,4 +1,4 @@
-import {LOADING_END, LOADING_FAILED, LOADING_START, LOADING_SUCCESS, NEXT_PAGE} from "../feed/action-types";
+import {LOADING_END, LOADING_FAILED, LOADING_START, LOADING_SUCCESS, NEXT_PAGE} from "./action-types";
 import API from "../../api";
 
 export const loadFeed = () => async (dispatch, getState) => {

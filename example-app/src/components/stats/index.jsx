@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import {connect} from "../../../src";
-import Octicon, {Organization, Mail, Briefcase} from "@githubprimer/octicons-react";
+import {connect} from "../../../../src";
+import Octicon, {Organization, Mail, Briefcase} from "@githubprimer/octicons-react/";
 
 function Index(props) {
   return (

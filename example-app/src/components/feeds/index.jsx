@@ -1,7 +1,7 @@
 import React, {useEffect, Fragment} from 'react';
 import {loadFeed, loadNextPage} from "../../store/feed/actions";
 import Event from "./event";
-import {useStore, useActions} from "../../../src";
+import {useStore, useActions} from "../../../../src";
 
 function Feed() {
   const {events, inProgress, page} = useStore(store => ({

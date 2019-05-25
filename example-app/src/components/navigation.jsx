@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {logout} from '../store/auth/actions';
-import {connect} from "../../src";
-import Octicon, {SignOut, Location} from "@githubprimer/octicons-react";
+import {connect} from "../../../src";
+import Octicon, {SignOut, Location} from "@githubprimer/octicons-react/";
 
 function Nav(props) {
   return (

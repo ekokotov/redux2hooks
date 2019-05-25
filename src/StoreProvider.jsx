@@ -1,5 +1,4 @@
 import React, {createContext, useReducer} from 'react';
-import PropTypes from 'prop-types';
 
 export const Store = createContext();
 
@@ -27,10 +26,5 @@ export function StoreProvider(props) {
 
   return <Store.Provider value={{state, dispatch}}>{props.children}</Store.Provider>;
 }
-
-StoreProvider.propTypes = {
-  initialState: PropTypes.object,
-  reducers: PropTypes.func.isRequired
-};
 
 export default StoreProvider;
