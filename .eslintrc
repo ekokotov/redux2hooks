@@ -1,8 +1,8 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "standard",
-    "standard-react"
+  "parser":  "@typescript-eslint/parser",  // Specifies the ESLint parser
+  "extends":  [
+    "plugin:@typescript-eslint/recommended",  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:react/recommended"  // Uses the recommended rules from @eslint-plugin-react
   ],
   "env": {
     "es6": true
@@ -11,12 +11,13 @@
     "react"
   ],
   "parserOptions": {
+    "ecmaVersion":  2018,
     "sourceType": "module"
   },
   "rules": {
     // don't force es6 functions to include space before paren
     "space-before-function-paren": 0,
-
+    "semi": "off",
     // allow specifying true explicitly for boolean props
     "react/jsx-boolean-value": 0
   }

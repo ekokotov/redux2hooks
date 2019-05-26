@@ -11,18 +11,21 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel start watch",
     "start": "serve ./example-app/public",
-    "build": "rollup -c"
+    "build": "tsc --emitDeclarationOnly && rollup -c",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ekokotov/redux2hooks.git"
   },
   "keywords": [
+    "redux2hooks",
     "redux",
     "hooks",
     "thunk",
@@ -43,31 +46,36 @@
     "react": ">=16.8.0"
   },
   "dependencies": {
-    "core-js": "^2.6.8",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "rollup-plugin-replace": "^2.2.0"
+    "react": "^16.8.6"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^4.3.3",
     "@githubprimer/octicons-react": "^8.5.0",
     "@octokit/rest": "^16.27.0",
-    "babel-cli": "^6.26.0",
+    "@types/prop-types": "^15.7.1",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-is": "^16.7.1",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.5",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "core-js": "^2.6.8",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^3.1.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^1.17.1",
+    "prop-types": "^15.7.2",
     "react": "^16.4.1",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
@@ -79,9 +87,14 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "serve": "^11.0.0"
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "serve": "^11.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ]
 }

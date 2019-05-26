@@ -1,11 +1,11 @@
 import React from 'react';
-import Props from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Alert = props => <div className={`alert alert-${props.type}`} role="alert">{props.message}</div>;
 
 Alert.propTypes = {
-  message: Props.string.isRequired,
-  type: Props.oneOf(['primary', 'success', 'danger', 'warning'])
+  message: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['primary', 'success', 'danger', 'warning'])
 };
 
 Alert.defaultProps = {
