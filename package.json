@@ -14,6 +14,7 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-ts": "tsc -w",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel start watch",
     "start": "serve ./example-app/public",
@@ -49,13 +50,13 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
-    "@types/react-router-dom": "^4.3.3",
     "@githubprimer/octicons-react": "^8.5.0",
     "@octokit/rest": "^16.27.0",
     "@types/prop-types": "^15.7.1",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/react-is": "^16.7.1",
+    "@types/react-router-dom": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "babel-core": "^6.26.3",

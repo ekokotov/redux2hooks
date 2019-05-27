@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import { Store } from './StoreProvider';
-import { IMappedAction } from './types';
+import { IMappedAction, IMappedStateToProps } from './types-helper';
 
 export default function connect(
   mapStateToProps: Function,
   mapActions: IMappedAction
 ): Function {
-  return (
-    Component: React.ComponentType
-  ): Function => (): React.ReactElement => {
+  return (Component: React.ComponentType): React.FunctionComponent => (
+    props: React.ComponentProps<any>
+  ): React.ReactElement => {
     const { state, dispatch } = useContext(Store);
     const mappedActions: IMappedAction = {};
-    const mappedStateToProps = mapStateToProps ? mapStateToProps(state) : {};
+    const mappedStateToProps: IMappedStateToProps = mapStateToProps
+      ? mapStateToProps(state, props)
+      : {};
 
     for (const key in mapActions) {
       if (mapActions.hasOwnProperty(key)) {

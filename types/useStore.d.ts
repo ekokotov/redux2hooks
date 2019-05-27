@@ -1,1 +1,1 @@
-export default function useStore<Function>(mapFunction: Function): Object;
+export default function useStore(mapFunction: Function): Object;

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Store } from './StoreProvider';
-import { IMappedAction } from './types';
+import { IMappedAction } from './types-helper';
 
 function useActions(mapAction: IMappedAction = {}) {
   const { dispatch } = useContext(Store);

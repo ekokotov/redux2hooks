@@ -1,18 +1,21 @@
 import React, { createContext, useReducer } from 'react';
-import { IAction, IState } from './types';
+import { IAction, IMappedStateToProps, IStoreState } from './types-helper';
 
-export const Store: React.Context<any> = createContext(null);
+export const Store: React.Context<any> = createContext(undefined);
 
 // const devTools = devToolsEnhancer;
 // let _redux;
 // import {devToolsEnhancer} from 'redux-devtools-extension';
 interface IStoreProviderProps {
-  reducers: () => IState;
-  initialState?: IState;
-  children: Array<React.ReactElement>;
+  reducers: IMappedStateToProps;
+  initialState?: IStoreState;
 }
 
-export function StoreProvider(props: IStoreProviderProps): React.ReactElement {
+export const StoreProvider: React.FC<
+  React.PropsWithChildren<IStoreProviderProps>
+> = (
+  props: React.PropsWithChildren<IStoreProviderProps>
+): React.ReactElement => {
   let [state, setState] = useReducer(
     props.reducers,
     props.initialState || props.reducers()
@@ -20,13 +23,13 @@ export function StoreProvider(props: IStoreProviderProps): React.ReactElement {
   // _redux = devTools.connect();
   // _redux.init(state);
   // });
-  function getState(): IState {
+  function getState(): IStoreState {
     return state;
   }
 
   function dispatch(action: IAction | Function) {
     // own dispatch
-    if (typeof action === 'function') {
+    if (typeof action == 'function') {
       return action(dispatch, getState);
     } else if (typeof action === 'object') {
       // devTools.send(action, reducers(state, action));
@@ -39,6 +42,4 @@ export function StoreProvider(props: IStoreProviderProps): React.ReactElement {
       {props.children}
     </Store.Provider>
   );
-}
-
-export default StoreProvider;
+};

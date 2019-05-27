@@ -25,7 +25,7 @@ const prodBuild = () => ({
   plugins: [
     external(),
     babel(),
-    typescript(),
+    // typescript(),
     resolve({
       browser: true,
       extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
@@ -74,6 +74,7 @@ const devBuild = () => ({
           'useReducer',
           'Fragment',
           'createContext',
+          'Suspense'
         ],
         'node_modules/react-dom/index.js': [
           'render',

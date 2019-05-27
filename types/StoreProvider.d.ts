@@ -1,10 +1,9 @@
 import React from 'react';
-import { IState } from './types';
+import { IMappedStateToProps, IStoreState } from './types-helper';
 export declare const Store: React.Context<any>;
 interface IStoreProviderProps {
-    reducers: () => IState;
-    initialState?: IState;
-    children: Array<React.ReactElement>;
+    reducers: IMappedStateToProps;
+    initialState?: IStoreState;
 }
-export declare function StoreProvider(props: IStoreProviderProps): React.ReactElement;
-export default StoreProvider;
+export declare const StoreProvider: React.FC<React.PropsWithChildren<IStoreProviderProps>>;
+export {};

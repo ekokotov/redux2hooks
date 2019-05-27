@@ -1,11 +1,11 @@
-import { IAction, ICombineReducers, IState } from './types';
+import { IAction, ICombineReducers, IStoreState } from './types-helper';
 
 const combineReducers = (reducers: ICombineReducers): Function => (
-  state: IState = {},
+  state: IStoreState = {},
   action: IAction
 ) =>
   Object.keys(reducers).reduce(
-    (nextState: IState = {}, key: string): IState => {
+    (nextState: IStoreState = {}, key: string): IStoreState => {
       nextState[key] = reducers[key](state[key], action);
       return nextState;
     },
