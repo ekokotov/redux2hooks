@@ -5,6 +5,7 @@
 node_modules
 example-app/public/**.js
 example-app/public/**.js.map
+example-app/* linguist-vendored
 # builds
 build
 dist
