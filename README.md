@@ -2,6 +2,8 @@
 > Small library for a smooth replacement of Redux/Thunk for React 16 hooks using Redux-like syntax.
 
 [![Build Status](https://api.travis-ci.com/ekokotov/redux2hooks.svg?branch=master)](https://travis-ci.com/ekokotov/redux2hooks)
+[![Package size](https://badgen.net/bundlephobia/min/redux2hooks)](https://bundlephobia.com/result?p=redux2hooks)
+[![NPM Downloads](https://badgen.net/npm/dt/redux2hooks)](https://www.npmjs.com/package/redux2hooks)
 
 ## Introduction
 
