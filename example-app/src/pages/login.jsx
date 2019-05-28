@@ -48,7 +48,7 @@ Login.propTypes = {
   login: PropTypes.func.isRequired
 };
 
-export default connect(state => ({
+export default connect((state, ownProps) => ({
     error: state.auth.error,
     inProgress: state.auth.inProgress
   }),

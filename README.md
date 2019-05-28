@@ -83,7 +83,7 @@ function Followers(props) {
 }
 
 export default connect(
-  state => ({
+  (state, ownProps) => ({
     followers: state.followers.items,
     inProgress: state.followers.inProgress
   }),

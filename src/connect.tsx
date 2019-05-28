@@ -9,6 +9,7 @@ export default function connect(
   return (Component: React.ComponentType): React.FunctionComponent => (
     props: React.ComponentProps<any>
   ): React.ReactElement => {
+    debugger;
     const { state, dispatch } = useContext(Store);
     const mappedActions: IMappedAction = {};
     const mappedStateToProps: IMappedStateToProps = mapStateToProps
