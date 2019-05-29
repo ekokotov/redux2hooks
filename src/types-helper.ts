@@ -24,3 +24,13 @@ export interface IMappedAction {
 export interface IMappedStateToProps {
   (state?: IStoreState | null, props?: React.ComponentProps<any>): IStoreState;
 }
+
+export interface IStoreProviderProps {
+  reducers: IMappedStateToProps;
+  initialState?: IStoreState;
+}
+export type DispatchAction =
+  | IAction
+  | {
+  (dispatch: DispatchAction, getState: () => IStoreState): IStoreState;
+};

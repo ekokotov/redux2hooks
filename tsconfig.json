@@ -6,14 +6,16 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["esnext"],
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
     "resolveJsonModule": true,
     "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
-    "checkJs": false
+    "noEmitHelpers": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true
   },
   "exclude": [
     "example-app",

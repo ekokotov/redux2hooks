@@ -1,15 +1,11 @@
 import React, { createContext, useReducer } from 'react';
-import { IAction, IMappedStateToProps, IStoreState } from './types-helper';
+import { DispatchAction, IStoreProviderProps, IStoreState } from './types-helper';
 
 export const Store: React.Context<any> = createContext(undefined);
 
 // const devTools = devToolsEnhancer;
 // let _redux;
 // import {devToolsEnhancer} from 'redux-devtools-extension';
-interface IStoreProviderProps {
-  reducers: IMappedStateToProps;
-  initialState?: IStoreState;
-}
 
 export const StoreProvider: React.FC<
   React.PropsWithChildren<IStoreProviderProps>
@@ -27,14 +23,14 @@ export const StoreProvider: React.FC<
     return state;
   }
 
-  function dispatch(action: IAction | Function) {
+  function dispatch(action: DispatchAction): IStoreState {
     // own dispatch
     if (typeof action == 'function') {
       return action(dispatch, getState);
-    } else if (typeof action === 'object') {
-      // devTools.send(action, reducers(state, action));
-      return setState(action);
     }
+    // devTools.send(action, reducers(state, action));
+    setState(action);
+    return state;
   }
 
   return (
